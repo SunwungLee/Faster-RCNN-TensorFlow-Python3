@@ -3,6 +3,7 @@ import time
 import numpy as np
 import tensorflow as tf
 from tensorflow.python import pywrap_tensorflow
+import tensorflow.compat.v1 as tf
 
 import lib.config.config as cfg
 from lib.datasets import roidb as rdl_roidb
@@ -36,7 +37,6 @@ def combined_roidb(imdb_names):
     """
     Combine multiple roidbs
     """
-
     def get_roidb(imdb_name):
         imdb = get_imdb(imdb_name)
         print('Loaded dataset `{:s}` for training'.format(imdb.name))
